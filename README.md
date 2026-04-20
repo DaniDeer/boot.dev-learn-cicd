@@ -23,3 +23,23 @@ _This starts the server in non-database mode._ It will serve a simple webpage at
 You do _not_ need to set up a database or any interactivity on the webpage yet. Instructions for that will come later in the course!
 
 # Daniel's version of Boot.dev's Notely app
+
+## Learnings
+
+- [Course: Boot.dev - Breakdown of GitHub Actions](https://www.boot.dev/lessons/de167f69-46ed-474a-9a10-c9749b8040b6)
+- [Course: Boot.dev - GitHub Actions](https://www.boot.dev/lessons/6df20cf9-d8b3-49be-a299-5ecaaa40b71d)
+
+**Unit Testing in Go**
+
+- [Blog: Dave Cheney - Prefer Table Driven Tests](https://dave.cheney.net/2019/05/07/prefer-table-driven-tests)
+
+In GO tests are just regular GO functions with a few rules:
+
+1. The name of the test function must start with `Test`.
+2. The test function must take one argument of type `*testing.T`. A `*testing.T` is a type injected by the `testing` package itself, to provide ways to print, skip, and fail the test.
+
+- Use table-driven tests to test multiple cases in a single test function and reducing boilerplate code.
+- Use the `t.Run` method to run subtests for each case in the table-driven test, which allows for better organization and reporting of test results.
+- Use the `cmp.Diff` function from the `github.com/google/go-cmp/cmp` package to compare expected and actual values in tests, which provides a more detailed and human-readable output when tests fail.
+
+Example see here: `./internal/auth/get_api_key_test.go`
