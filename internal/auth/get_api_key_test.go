@@ -20,7 +20,7 @@ func TestGetAPIKey(t *testing.T) {
 			testHeader: map[string][]string{
 				"Authorization": {"ApiKey test-api-key"},
 			},
-			want: "test-api-ke",
+			want: "test-api-key",
 			error : nil,
 		},
 
