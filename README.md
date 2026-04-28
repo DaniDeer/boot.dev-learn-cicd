@@ -113,3 +113,5 @@ go install github.com/securego/gosec/v2/cmd/gosec@latest
 # Run Gosec
 gosec ./...
 ```
+
+> Note: These kinds of automated tests can help us eliminate ~80% of the most obvious bugs, stylistic anti-patterns, and security vulnerabilities, but they can't catch everything. We still need to take care to write good, secure code.
