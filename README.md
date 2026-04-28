@@ -101,3 +101,15 @@ staticcheck ./...
 Find the `staticcheck` action in the [GitHub Marketplace](https://github.com/marketplace/actions/staticcheck)
 
 See `staticcheck` checks here: [Staticcheck Checks](https://staticcheck.dev/docs/checks)
+
+### Security in GO
+
+One of the most popular open-source security scanners for GO is [Gosec](https://github.com/securego/gosec).
+
+```BASH
+# Install Gosec
+go install github.com/securego/gosec/v2/cmd/gosec@latest
+
+# Run Gosec
+gosec ./...
+```
