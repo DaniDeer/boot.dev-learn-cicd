@@ -7,6 +7,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
+	"time"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/cors"
@@ -33,6 +35,12 @@ func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
 		log.Fatal("PORT environment variable is not set")
+	}
+
+	// Check if PORT is a valid number
+	portInt, err := strconv.Atoi(port)
+	if err != nil || portInt <= 0 || portInt > 65535 {
+		log.Fatalf("invalid PORT environment variable.")
 	}
 
 	apiCfg := apiConfig{}
@@ -91,8 +99,9 @@ func main() {
 	srv := &http.Server{
 		Addr:    ":" + port,
 		Handler: router,
+		ReadHeaderTimeout: 10 * time.Second,
 	}
 
-	log.Printf("Serving on port: %s\n", port)
+	log.Printf("Serving on port: %d\n", portInt)
 	log.Fatal(srv.ListenAndServe())
 }
