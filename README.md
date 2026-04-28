@@ -96,5 +96,6 @@ go install honnef.co/go/tools/cmd/staticcheck@latest
 
 # Run Staticcheck
 staticcheck ./...
-
 ```
+
+Find the `staticcheck` action in the [GitHub Marketplace](https://github.com/marketplace/actions/staticcheck)
