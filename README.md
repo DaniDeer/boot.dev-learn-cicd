@@ -99,3 +99,5 @@ staticcheck ./...
 ```
 
 Find the `staticcheck` action in the [GitHub Marketplace](https://github.com/marketplace/actions/staticcheck)
+
+See `staticcheck` checks here: [Staticcheck Checks](https://staticcheck.dev/docs/checks)
