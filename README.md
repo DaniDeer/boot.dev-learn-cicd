@@ -31,6 +31,17 @@ You do _not_ need to set up a database or any interactivity on the webpage yet. 
 - [Course: Boot.dev - Breakdown of GitHub Actions](https://www.boot.dev/lessons/de167f69-46ed-474a-9a10-c9749b8040b6)
 - [Course: Boot.dev - GitHub Actions](https://www.boot.dev/lessons/6df20cf9-d8b3-49be-a299-5ecaaa40b71d)
 
+### Others
+
+Testing if the code is properly formatted:
+
+```bash
+test -z $(go fmt ./...)
+echo $?
+```
+
+`echo $?` will print the exit code of the previous command. If the code is properly formatted, `go fmt` will not make any changes and will exit with a status code of `0`, which means success. If there are formatting issues, `go fmt` will make changes to the code and exit with a non-zero status code (`1`), indicating that there were formatting issues that need to be addressed.
+
 ### Testing in GO
 
 #### Unit Testing in Go
@@ -63,3 +74,27 @@ go test ./... -cover
 - [Blog: Boot.dev - Writing Good Unit Tests: Don't Mock Database Connections](https://www.boot.dev/blog/backend/writing-good-unit-tests-dont-mock-database-connections/)
 - [Blog: CircleCI - Unit Testing vs Integration Testing](https://circleci.com/blog/unit-testing-vs-integration-testing/)
 
+### Formatting and Linting in GO
+
+#### Formatting
+
+Enforces whitespace, indentation, and line length rules.
+
+```BASH
+go fmt ./...
+```
+
+#### Linting
+
+Detects potential errors, code smells, and style issues in your code.
+
+The most popular linter for GO is [Staticccheck](https://staticcheck.dev/docs/) ([github.com/dominikh/go-tools](https://github.com/dominikh/go-tools)). It comes with sane defaults and it is easy to configure.
+
+```BASH
+# Install Staticcheck
+go install honnef.co/go/tools/cmd/staticcheck@latest
+
+# Run Staticcheck
+staticcheck ./...
+
+```
