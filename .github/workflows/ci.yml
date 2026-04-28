@@ -38,7 +38,7 @@ jobs:
       - name: Format
         run: test -z $(go fmt ./...)
 
-      - name: Run staticcheck
+      - name: Lint
         uses: dominikh/staticcheck-action@v1
         with:
           version: "latest"
