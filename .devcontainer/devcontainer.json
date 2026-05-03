@@ -8,7 +8,7 @@
 			"version": "1.50.0"
 		},
 		"ghcr.io/azutake/devcontainer-features/go-packages-install:0": {
-			"PACKAGES": "honnef.co/go/tools/cmd/staticcheck@latest,github.com/securego/gosec/v2/cmd/gosec@latest"
+			"PACKAGES": "honnef.co/go/tools/cmd/staticcheck@latest,github.com/securego/gosec/v2/cmd/gosec@latest,github.com/pressly/goose/v3/cmd/goose@latest"
 		},
 		"ghcr.io/dhoeric/features/google-cloud-cli:1": {}
 	},
